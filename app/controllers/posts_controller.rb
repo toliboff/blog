@@ -1,9 +1,8 @@
-class PostsController < ApplicationController
-  def index
-    
-  end
+# frozen_string_literal: true
 
-  def show
-    
-  end
+#  Controller for posts
+class PostsController < ApplicationController
+  def index; end
+
+  def show; end
 end
