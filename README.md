@@ -4,6 +4,7 @@
 # Built With
 
 - Ruby on Rails
+- PostgreSQL
 
 ## Getting Started
 
@@ -17,11 +18,16 @@ To get a local copy up and running follow these simple example steps.
 ### Setup
 - Clone or download this repo on your machine
 - Enter project directory
+- Run `install bundle` to install dependencies
+- Run  `rake db:create` to create a database
 
 ### Run
 
 Run `rails s` to run the server and open `localhost:3000` in browser
 
+### Test
+
+Run `bundle exec rspec` to run tests
 ## Author
 
 👤 **Tolib**
