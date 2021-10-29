@@ -1,24 +1,51 @@
-# README
+# Blog App
+> This is a classic example of a blog website. It alows to show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Built With
 
-Things you may want to cover:
+- Ruby on Rails
+- PostgreSQL
 
-* Ruby version
+## Getting Started
 
-* System dependencies
+To get a local copy up and running follow these simple example steps.
 
-* Configuration
+### Prerequisites
 
-* Database creation
+- [Ruby](https://www.ruby-lang.org/)
+- [Ruby on Rails](https://rubyonrails.org/)
 
-* Database initialization
+### Setup
+- Clone or download this repo on your machine
+- Enter project directory
+- Run `install bundle` to install dependencies
+- Run  `rake db:create` to create a database
 
-* How to run the test suite
+### Run
 
-* Services (job queues, cache servers, search engines, etc.)
+Run `rails s` to run the server and open `localhost:3000` in browser
 
-* Deployment instructions
+### Test
 
-* ...
+Run `bundle exec rspec` to run tests
+## Author
+
+👤 **Tolib**
+
+- GitHub: [@toliboff](https://github.com/toliboff)
+- Twitter: [@toliboff](https://twitter.com/tolib_tolibov)
+- LinkedIn: [Tolibjon Tolibov](https://linkedin.com/in/tolibjon-tolibov)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse
