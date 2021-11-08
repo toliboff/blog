@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_many :comments
 
   def update_post_counter
-    user.update(posts_counter:Post.where(user_id:user).count)
+    user.update(posts_counter: Post.where(user_id: user).count)
   end
 
   def last_comments
