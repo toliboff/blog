@@ -1,28 +1,14 @@
 <h1>Blog user page</h1>
 <p>Here is a details for given user</p>
 
-<div class="users">
-    <img src="<%= @user.photo %>" class="users-image">
-    <div class="users-info">
-      <span><%= @user.name %></span>
-      <div>Number of posts: <%= @user.posts_counter ? @user.posts_counter : 0 %></div>
-    </div>
-</div>
+<%= render partial: 'user', locals: {user: @user} %>
 <p>
   <%= @user.bio %>
 </p>
 
 <ul>
   <% @user_posts.each do |post| %>
-    <li>
-      <h3><%= post.title %></h3>
-      <p><%= post.text %></p>
-
-      <div class="stats">
-        <div>Comments: <%= post.comments_counter ? post.comments_counter : 0 %></div>
-        <div>Likes: <%= post.likes_counter ? post.likes_counter : 0 %></div>
-      </div>
-    </li>
+    
   <% end %>
 </ul>
 <% unless @user_posts.count < 1 %>
