@@ -1,2 +1,14 @@
 <h1>Single post</h1>
 <p>Here is a post for given user with given id of post</p>
+
+<h2><%= @post.title %></h2> by <%= @user.name %> <br>
+Comments: <%= @comments.count %>
+Likes: <%= @likes.count %>
+<p>
+  <%= @post.text %>
+</p>
+<ul>
+<% @comments.each do |comment| %>
+ <li><%= comment.text %></li>
+<% end %>
+</ul>
