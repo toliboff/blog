@@ -10,6 +10,6 @@
     <%= render partial:'post', locals:{post: post} %>
   <% end %>
 </ul>
-<% unless @user_posts.size %>
-<button>Pagination</button>
+<% unless @user_posts.size == 0 %>
+  <button>Pagination</button>
 <% end %>
