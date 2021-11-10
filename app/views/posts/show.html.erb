@@ -1,2 +1,22 @@
-<h1>Single post</h1>
-<p>Here is a post for given user with given id of post</p>
+<%= render partial: 'shared/header' %>
+<div class="post-header">
+  <h2><%= @post.title %></h2>
+  by<span><%= @user.name %> </span>
+  <div class="stats">
+    Comments: <%= @comments.count %>
+    Likes: <%= @likes.count %>
+  </div>
+</div>
+ <p>
+  <%= @post.text %>
+</p>
+
+<ul class="comments">
+  <% @comments.each do |comment| %>
+    <li class="comment">
+      <%= comment.author.name %>:
+      <%= comment.text %>
+    </li>
+
+  <% end %>
+</ul>

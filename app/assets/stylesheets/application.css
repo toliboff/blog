@@ -14,3 +14,35 @@
  *= require_tree .
  *= require_self
  */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+ body {
+   margin: 0 20%;
+ }
+
+ ul {
+    list-style-type: none;
+ }
+
+ a {
+   text-decoration: none;
+   color: rgb(70, 140, 245)
+ }
+
+ .header {
+   height: 35px;
+   font-size: 1.5rem;
+   font-weight: 700;
+   margin: 1rem;
+ }
+
+ .stats {
+   display: flex;
+   justify-content: flex-end;
+   gap:0.5rem;
+   color:rgb(80, 78, 78);
+ }

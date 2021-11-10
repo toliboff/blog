@@ -1,2 +1,18 @@
-<h1>Blog user page</h1>
-<p>Here is a details for given user</p>
+<%= render partial: 'shared/header' %>
+
+<%= render partial: 'user', locals: {user: @user} %>
+<div class="bio">
+<h2>Bio</h2>
+<p>
+  <%= @user.bio %>
+</p>
+</div>
+
+
+<ul class="posts wo-comments">
+  <% @user_posts.each do |post| %>
+    <%= render partial:'posts/post', locals:{post: post, users: @users, comments: @comments}%>
+  <% end %>
+</ul>
+
+<%= link_to "See all post", user_posts_path(@user.id) %>

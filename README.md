@@ -20,6 +20,8 @@ To get a local copy up and running follow these simple example steps.
 - Enter project directory
 - Run `install bundle` to install dependencies
 - Run  `rake db:create` to create a database
+- Run  `rake db:migrate` to create a migrations
+- Run  `rake db:seed` to add dummy data
 
 ### Run
 
