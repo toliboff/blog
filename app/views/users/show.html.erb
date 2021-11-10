@@ -1,5 +1,5 @@
-<h1>Blog user page</h1>
-<p>Here is a details for given user</p>
+<%= render partial: 'shared/header' %>
+
 <%= render partial: 'user', locals: {user: @user} %>
 <p>
   <%= @user.bio %>

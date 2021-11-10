@@ -1,5 +1,5 @@
-<h1>Users all posts</h1>
-<p>Here is a list of posts for given user</p>
+<%= render partial: 'shared/header' %>
+
 <%= render partial:'users/user', locals: {user: @user} %>
 <p>
   <%= @user.bio %>

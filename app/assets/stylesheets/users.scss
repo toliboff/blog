@@ -5,19 +5,27 @@
   width: 50px;
   height: 50px;
   border: 1px solid #ccc;
+  margin-right: 1rem;
 }
-
-ul {
-  list-style-type: none;
-
-  .users {
+.user {
     display: flex;
-    margin: 15px 0;
+    margin: 2rem 0;
+
+    .username {
+      font-size: 2rem;
+    }
 
     .users-info {
+      align-items: center;
       display: flex;
       flex-grow: 1;
       justify-content: space-between;
     }
+
+    .user-posts {
+      align-self: flex-end;
+      font-size: 0.8rem;
+      color: rgb(87, 85, 85);
+    }
   }
-}
+

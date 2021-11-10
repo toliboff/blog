@@ -16,5 +16,17 @@
  */
 
  body {
-   margin: 0 15%;
+   margin: 0 20%;
+ }
+
+ a {
+   text-decoration: none;
+   color: rgb(70, 140, 245)
+ }
+
+ .header {
+   height: 35px;
+   font-size: 1.5rem;
+   font-weight: 700;
+   margin: 1rem;
  }
