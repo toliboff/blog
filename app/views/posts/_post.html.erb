@@ -1,0 +1,21 @@
+<li>
+      <h3><%= post.title %></h3>
+      <p><%= post.text %></p>
+
+      <div class="stats">
+        <div>Comments: <%= post.comments_counter ? post.comments_counter : 0 %></div>
+        <div>Likes: <%= post.likes_counter ? post.likes_counter : 0 %></div>
+      </div>
+
+      <ul class="comments">
+       
+        <% @comments.each do |comment| %>
+          <li>
+           <% cmnt = comment.select{|a| a.post_id == post.id } %>
+            <% cmnt.each do |com| %>
+              <%= com.text %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
