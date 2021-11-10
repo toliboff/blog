@@ -1,3 +1,31 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.post {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.post-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+
+  .stats {
+    margin-left: auto;
+  }
+
+}
+
+
+p {
+  text-align: justify;
+  margin: 1rem 0;
+}
+
+.comment {
+  margin: 1rem 0;
+}
