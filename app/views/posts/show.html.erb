@@ -1,13 +1,22 @@
 <%= render partial: 'shared/header' %>
-
-<h2><%= @post.title %></h2> by <%= @user.name %> <br>
-Comments: <%= @comments.count %>
-Likes: <%= @likes.count %>
-<p>
+<div class="post-header">
+  <h2><%= @post.title %></h2>
+  by<span><%= @user.name %> </span>
+  <div class="stats">
+    Comments: <%= @comments.count %>
+    Likes: <%= @likes.count %>
+  </div>
+</div>
+ <p>
   <%= @post.text %>
 </p>
-<ul>
-<% @comments.each do |comment| %>
- <li><%= comment.text %></li>
-<% end %>
+
+<ul class="comments">
+  <% @comments.each do |comment| %>
+    <li class="comment">
+      <%= comment.author.name %>:
+      <%= comment.text %>
+    </li>
+
+  <% end %>
 </ul>

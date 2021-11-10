@@ -7,9 +7,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_posts = Post.where(author_id: @user.id)
-    @comments = [];
-    @user_posts.each do|post|
-      @comments<<post.comments.all
-    end
+    @comments = Comment.all;
   end
 end

@@ -1,6 +1,6 @@
  
-<li>
-<%= link_to user_post_path(post.author.id, post.id) do %>
+<li class="post">
+  <%= link_to user_post_path(post.author.id, post.id) do %>
       <h3><%= post.title %></h3>
         <% end %>
       <p><%= post.text %></p>
@@ -11,14 +11,13 @@
       </div>
 
       <ul class="comments">
-       
-        <% @comments.each do |comment| %>
-          <li>
-           <% cmnt = comment.select{|a| a.post_id == post.id } %>
-            <% cmnt.each do |com| %>
-              <%= com.text %>
-            <% end %>
-          </li>
+        <% filtered_comments = comments.select{|a| a.post_id == post.id } %>
+        <% filtered_comments.each do |comment| %>
+              <li>
+                <%= comment.author.name %>
+                <%= comment.text %>
+              </li>
+            
         <% end %>
       </ul>
-    </li>
+  </li>

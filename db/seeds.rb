@@ -8,18 +8,22 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 random = Random.new
-user_qty = random.rand(3..10)
+user_qty = random.rand(1..10)
+
+
 
 user_qty.times do |i|
 	user = User.create(name: "User#{i+1}", bio: "A bio of User#{i+1}.")
-	post_qty = random.rand(2..5)
-
+	
+	post_qty = random.rand(1..5)
 	post_qty.times do |j|
 		post = Post.create(title: "Post title #{j+1}", text: "Post text goes here", author: user)
-		
-		comment_qty = random.rand(20)
-		comment_qty.times do |j|
-			Comment.create(text: "Comment ##{j+1}", post: post, author: user)
-		end
 	end
+end
+
+users = User.all
+posts = Post.all
+comment_qty = random.rand(3..20)
+comment_qty.times do |j|
+	Comment.create(text: "Comment ##{j+1}", post: posts[random.rand(posts.count)], author: users[random.rand(users.count)])
 end

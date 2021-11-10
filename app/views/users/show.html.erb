@@ -1,13 +1,17 @@
 <%= render partial: 'shared/header' %>
 
 <%= render partial: 'user', locals: {user: @user} %>
+<div class="bio">
+<h2>Bio</h2>
 <p>
   <%= @user.bio %>
 </p>
+</div>
 
-<ul>
+
+<ul class="posts wo-comments">
   <% @user_posts.each do |post| %>
-    <%= render partial:'posts/post', locals:{post: post, comments: @comments}%>
+    <%= render partial:'posts/post', locals:{post: post, users: @users, comments: @comments}%>
   <% end %>
 </ul>
 <% unless @user_posts.count < 1 %>
