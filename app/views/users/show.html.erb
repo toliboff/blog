@@ -14,7 +14,5 @@
     <%= render partial:'posts/post', locals:{post: post, users: @users, comments: @comments}%>
   <% end %>
 </ul>
-<% unless @user_posts.count < 1 %>
-<button>See all posts</button>
-<% end %>
+
 <%= link_to "See all post", user_posts_path(@user.id) %>
