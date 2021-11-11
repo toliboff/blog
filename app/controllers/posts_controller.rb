@@ -21,15 +21,15 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new post_params
-    @post.author = current_user 
+    @post.author = current_user
     if @post.save
       redirect_to user_posts_path
-    else 
+    else
       render :new
     end
   end
 
-  private 
+  private
 
   def post_params
     params.require(:post).permit(:title, :text)
