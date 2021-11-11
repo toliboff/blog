@@ -3,14 +3,14 @@ class PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @users = User.all
-    @user_posts = @user.recent_posts
+    @user_posts = @user.posts
     @comments = Comment.all
   end
 
   def show
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
-    @comments = @post.comments.all
+    @comments = @post.comments.all.order(created_at: :desc)
     @users = User.all
     @likes = @post.likes.all
   end
