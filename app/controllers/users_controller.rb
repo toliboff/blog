@@ -1,7 +1,7 @@
 # Controller for users
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.all.order('id')
   end
 
   def show

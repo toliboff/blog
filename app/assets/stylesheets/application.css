@@ -18,6 +18,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
   }
 
  body {
@@ -38,6 +39,16 @@
    font-size: 1.5rem;
    font-weight: 700;
    margin: 1rem;
+   display: flex;
+   justify-content: space-between;
+ }
+
+ .new-post {
+   font-size: 0.8rem;
+   background-color: rgb(10, 196, 140);
+   color: #fff;
+   align-self: center;
+   padding: 0.5rem 1rem;
  }
 
  .stats {
@@ -45,4 +56,12 @@
    justify-content: flex-end;
    gap:0.5rem;
    color:rgb(80, 78, 78);
+ }
+
+ .btn {
+  font-size: 0.8rem;
+  background-color: rgb(8, 163, 163);
+  color: #fff;
+  align-self: center;
+  padding: 0.5rem 1rem;
  }
