@@ -65,4 +65,6 @@
   color: #fff;
   align-self: center;
   padding: 0.5rem 1rem;
+  border:none;
+  outline: none;
  }
