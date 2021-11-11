@@ -59,6 +59,7 @@
  }
 
  .btn {
+  border-radius: 3px;
   font-size: 0.8rem;
   background-color: rgb(8, 163, 163);
   color: #fff;
