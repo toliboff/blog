@@ -8,7 +8,7 @@ class LikesController < ApplicationController
     @like = Like.new(like_params)
     @like.author = current_user
     if @like.save
-      redirect_to root_path
+      redirect_to user_post_path(@like.author_id, @like.post_id)
     else
       :new
     end
