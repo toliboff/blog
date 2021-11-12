@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
+    user = User.create(name: 'Tolib', bio: 'Student learning Ruby on Rails')
+    Post.create(title: 'Post title', text: 'Lorem ipsum dolor set amet...', author: User.first)
     before(:example) { get user_posts_path(1) }
 
     it 'should have correct response status' do
@@ -13,12 +15,12 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'should include correct placeholder text' do
-      expect(response.body).to include('Here is a list of posts for given user')
+      expect(response.body).to include('Student learning Ruby on Rails')
     end
   end
 
   describe 'GET #show' do
-    before(:example) { get user_post_path(1, 1) }
+     before(:example) { get user_post_path(1, 1) }
 
     it 'should have correct response status' do
       expect(response).to have_http_status(:ok)
@@ -29,7 +31,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'should include correct placeholder text' do
-      expect(response.body).to include('Here is a post for given user with given id of post')
+      expect(response.body).to include('Lorem ipsum dolor set amet...')
     end
   end
 end
