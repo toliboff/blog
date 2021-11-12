@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
+    User.create(name: 'Tolib', bio: 'Student learning Ruby on Rails')
+
     before(:example) { get users_path }
 
     it 'is a success' do
@@ -13,7 +15,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should return correct placeholder text' do
-      expect(response.body).to include('Here is a list of users')
+      expect(response.body).to include('New post')
     end
   end
 
@@ -29,7 +31,7 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'should return correct placeholder text' do
-      expect(response.body).to include('Here is a details for given user')
+      expect(response.body).to include('Bio')
     end
   end
 end

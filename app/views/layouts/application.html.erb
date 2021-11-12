@@ -11,6 +11,21 @@
   </head>
 
   <body>
+    <% if flash %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <style type="text/css">
+      .alert-success{
+        color: green;
+      }
+      .alert-danger{
+        color: red;
+      }
+    </style>
     <%= yield %>
   </body>
 </html>

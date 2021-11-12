@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
+    user = User.create(name: 'Tolib', bio: 'Student learning Ruby on Rails')
+    Post.create(title: 'Post title', text: 'Lorem ipsum dolor set amet...', author: user)
     before(:example) { get user_posts_path(1) }
 
     it 'should have correct response status' do
@@ -13,7 +15,7 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'should include correct placeholder text' do
-      expect(response.body).to include('Here is a list of posts for given user')
+      expect(response.body).to include('Student learning Ruby on Rails')
     end
   end
 
@@ -29,7 +31,19 @@ RSpec.describe 'Posts', type: :request do
     end
 
     it 'should include correct placeholder text' do
-      expect(response.body).to include('Here is a post for given user with given id of post')
+      expect(response.body).to include('Lorem ipsum dolor set amet...')
+    end
+  end
+
+  describe 'last_comments method' do
+    it 'Should return 5 recently added comments' do
+      @user = User.first
+      @post = Post.last
+
+      10.times do |i|
+        Comment.create(text: "comment ##{i}", author: @user, post: @post)
+      end
+      expect(@post.last_comments.count).to eql(5)
     end
   end
 end

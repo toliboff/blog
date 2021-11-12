@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     @comment.author = current_user
     @comment.post_id = params[:post_id]
     if @comment.save
-      redirect_to user_post_path(params[:user_id], params[:post_id])
+      redirect_to user_post_path(params[:user_id], params[:post_id]), notice: 'Comment added successfully!'
     else
       :new
     end
