@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
-    User.create(name: "Tolib", bio: "Student learning Ruby on Rails");
-    
+    User.create(name: 'Tolib', bio: 'Student learning Ruby on Rails')
+
     before(:example) { get users_path }
 
     it 'is a success' do

@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   describe 'GET /index' do
-    subject { User.new(name: "Tolib", photo: 'no photo', bio: "Student learning Ruby on Rails") };
+    subject { User.new(name: 'Tolib', photo: 'no photo', bio: 'Student learning Ruby on Rails') }
     before { subject.save }
-    
+
     it 'Name must not be blank' do
       subject.name = ''
       expect(subject).to_not be_valid
@@ -19,7 +19,5 @@ RSpec.describe User, type: :model do
       subject.posts_counter = -1
       expect(subject).to_not be_valid
     end
-
-   
   end
 end

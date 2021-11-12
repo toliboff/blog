@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   describe 'GET /index' do
     user = User.create(name: 'Tolib', bio: 'Student learning Ruby on Rails')
-    Post.create(title: 'Post title', text: 'Lorem ipsum dolor set amet...', author: User.first)
+    Post.create(title: 'Post title', text: 'Lorem ipsum dolor set amet...', author: user)
     before(:example) { get user_posts_path(1) }
 
     it 'should have correct response status' do
@@ -20,7 +20,7 @@ RSpec.describe 'Posts', type: :request do
   end
 
   describe 'GET #show' do
-     before(:example) { get user_post_path(1, 1) }
+    before(:example) { get user_post_path(1, 1) }
 
     it 'should have correct response status' do
       expect(response).to have_http_status(:ok)

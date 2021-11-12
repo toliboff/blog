@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     @post = Post.new post_params
     @post.author = current_user
     if @post.save
-      
+
       redirect_to user_posts_path, notice: 'Post added successfully!'
     else
       flash[:alert] = @post.errors.first.full_message

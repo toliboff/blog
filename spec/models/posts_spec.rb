@@ -2,16 +2,16 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   describe 'GET /index' do
-    subject { Post.new(title: 'Post title', text: 'Long lorem ipsum text', author: User.first) };
+    subject { Post.new(title: 'Post title', text: 'Long lorem ipsum text', author: User.first) }
     before { subject.save }
-    
+
     it 'Title must not be blank' do
       subject.title = ''
       expect(subject).to_not be_valid
     end
 
     it 'Title must not exceed 250 characters' do
-      subject.title = 'a'*251
+      subject.title = 'a' * 251
       expect(subject).to_not be_valid
     end
 
