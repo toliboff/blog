@@ -34,4 +34,17 @@ RSpec.describe 'Posts', type: :request do
       expect(response.body).to include('Lorem ipsum dolor set amet...')
     end
   end
+
+  describe 'last_comments method' do
+    
+    it 'Should return 5 recently added comments' do
+      @user = User.first
+      @post = Post.last
+      puts @post.comments.count
+      10.times do |i|
+        Comment.create(text:"comment ##{i}", author: @user, post: @post)
+      end
+      expect(@post.last_comments.count).to eql(5)
+    end
+end
 end
