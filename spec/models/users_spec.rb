@@ -22,14 +22,12 @@ RSpec.describe User, type: :model do
   end
 
   describe 'recent_posts method' do
-    
     it 'Should return 3 recently added posts' do
       @user = User.first
       5.times do |i|
-        Post.create(title:"#{i}#Title", text:"Text ##{i}", author: @user)
+        Post.create(title: "#{i}#Title", text: "Text ##{i}", author: @user)
       end
       expect(@user.recent_posts.count).to eql(3)
     end
-
   end
 end
