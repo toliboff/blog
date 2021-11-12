@@ -10,7 +10,10 @@
  <p>
   <%= @post.text %>
 </p>
-
+<div class="buttons">
+  <%= link_to 'Add comment', user_post_path(params[:user_id], params[:id])+'/comments/new', class:'btn' %>
+  <%= button_to 'Like', likes_path, params:{like:{post_id:@post.id}}, method: :post, class:'btn' %>
+</div>
 <ul class="comments">
   <% @comments.each do |comment| %>
     <li class="comment">
