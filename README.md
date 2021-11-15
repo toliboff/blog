@@ -30,13 +30,19 @@ Run `rails s` to run the server and open `localhost:3000` in browser
 ### Test
 
 Run `bundle exec rspec` to run tests
-## Author
+## Authors
 
 👤 **Tolib**
 
 - GitHub: [@toliboff](https://github.com/toliboff)
 - Twitter: [@toliboff](https://twitter.com/tolib_tolibov)
 - LinkedIn: [Tolibjon Tolibov](https://linkedin.com/in/tolibjon-tolibov)
+
+👤 **caleb moses**
+
+- GitHub: [@m05e5](https://github.com/m05e5)
+- Twitter: [@caleb moses](https://twitter.com/CalebMo69401446)
+- LinkedIn: [caleb moses](https://www.linkedin.com/in/caleb-moses-0a1b531b9/)
 
 ## 🤝 Contributing
 
