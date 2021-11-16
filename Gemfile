@@ -32,6 +32,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # session and account manager for the application
 gem 'devise'
 
+# authorization manager
+gem 'cancancan'
+
 group :development, :test do
   # Add rspec-rails
   gem 'rails-controller-testing'
