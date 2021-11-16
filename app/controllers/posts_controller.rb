@@ -1,9 +1,11 @@
 #  Controller for posts
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @user = User.find(params[:user_id])
     @users = User.all
-    @user_posts = Post.includes(:author).order(created_at: :desc)
+    @user_posts = Post.includes(:author).where(author: @user)
     @comments = Comment.all
   end
 
@@ -29,6 +31,13 @@ class PostsController < ApplicationController
       flash[:alert] = @post.errors.first.full_message
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    
+    redirect_to user_posts_path, alert: 'Post deleted successfully!'
   end
 
   private
