@@ -11,18 +11,15 @@
   </head>
 
   <body>
-    <% if flash %>
-    <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+     <% flash.each do |name, message| %>
+      <div class="<%= name %>"><%= message %></div>
+     <% end %>
 
     <style type="text/css">
-      .alert-success{
+      .notice{
         color: green;
       }
-      .alert-danger{
+      .alert{
         color: red;
       }
     </style>

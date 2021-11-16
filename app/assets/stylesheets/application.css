@@ -67,4 +67,53 @@
   padding: 0.5rem 1rem;
   border:none;
   outline: none;
+  margin-bottom: 1rem;
  }
+
+ .login-page {
+   width: 50%;
+   padding: 1rem;
+   margin: 10% auto;
+   border: 1px solid rgb(201, 200, 200);
+   box-shadow: 0 5px 13px 3px #ccc;
+   border-radius: 5px;
+   display: flex;
+   flex-direction: column;
+   color: rgb(141, 140, 140);
+ }
+
+ .signup {
+   margin: 3% auto;
+ }
+
+ .login-page h2 {
+  color: rgb(73, 169, 248);
+  margin-bottom: 1rem;
+}
+
+ .login-page input[type='text'],
+ .login-page input[type='email'],
+ .login-page input[type='password'] ,
+ .login-page textarea {
+   width: 100%;
+  height: 2rem;
+  font-size: 1rem;
+  margin: 0.5rem 0 1rem;
+  padding: 0 0.5rem;
+  outline: none;
+  border: 1px solid rgb(230, 227, 227);
+  border-radius: 3px;
+}
+
+.actions {
+  display: flex;
+}
+.login-btn,
+.signup-btn {
+  margin: 1rem 0 1rem auto;
+  align-self: flex-end;
+}
+
+.links{
+  font-size: 0.8rem;
+}
