@@ -22,6 +22,10 @@
     <li class="comment">
       <%= comment.author.name %>:
       <%= comment.text %>
+      <% if can? :destroy, comment %>
+       <%= link_to 'Delete Comment',  user_post_comment_path(params[:user_id], @post, comment),   method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %>
+      <% end %>
+
     </li>
 
   <% end %>
