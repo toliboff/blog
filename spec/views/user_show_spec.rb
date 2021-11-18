@@ -4,7 +4,7 @@ RSpec.describe 'User show page', type: :system do
     before do
       visit new_user_session_path
       tolib = User.create(name:'Tolib', bio:'Tolib is a frontend developer', email:"tolib@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
-      adam = User.create(name:'Adam', bio:'Adam is a backend developer', email:"adam@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
+      User.create(name:'Adam', bio:'Adam is a backend developer', email:"adam@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
       
       5.times do |j|
         Post.create(title:"Post ##{j+1}", text:"#{j+1}Lorem ipsum dolor set amet.", author:tolib)
