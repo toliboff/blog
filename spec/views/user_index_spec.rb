@@ -41,7 +41,7 @@ end
 
 RSpec.describe 'User index page', type: :system do
   describe 'user index page' do
-    before :each do
+    before do
       visit new_user_session_path
       User.create(name:'Tolib', email:"tolib@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
       fill_in 'Email', with: 'tolib@mail.com'
