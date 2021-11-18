@@ -26,5 +26,22 @@ RSpec.describe 'User show page', type: :system do
     it 'I can see the user\'s bio' do
       expect(page).to have_content('Tolib is a frontend developer')
     end
+    it 'I can see the user\'s first 3 posts.' do
+      expect(page).to have_content('3Lorem ipsum dolor set amet.')
+      expect(page).to have_content('4Lorem ipsum dolor set amet.')
+      expect(page).to have_content('5Lorem ipsum dolor set amet.')
+    end
+    it 'I can see a button that lets me view all of a user\'s posts.' do
+      expect(page).to have_link('See all post')
+    end
+    it 'When I click a user\'s post, it redirects me to that post\'s show page.' do
+      click_link 'Post #3'
+      expect(page).to have_content('Post #3')
+      expect(page).to have_content('3Lorem ipsum dolor set amet')
+    end
+    it 'When I click to see all posts, it redirects me to the user\'s post\'s index page' do
+      click_link 'See all post'
+      expect(page).to have_current_path(user_posts_path(User.first.id))
+    end
   end
 end
