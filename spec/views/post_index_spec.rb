@@ -3,13 +3,15 @@ RSpec.describe 'Post', type: :system do
   describe 'index page' do
     before do
       visit new_user_session_path
-      @tolib = User.create(name:'Tolib', bio:'Tolib is a frontend developer', email:"tolib@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
-      @adam = User.create(name:'Adam', bio:'Adam is a backend developer', email:"adam@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
-      
+      @tolib = User.create(name: 'Tolib', bio: 'Tolib is a frontend developer', email: 'tolib@mail.com',
+                           password: '123456', password_confirmation: '123456', confirmed_at: Date.today)
+      @adam = User.create(name: 'Adam', bio: 'Adam is a backend developer', email: 'adam@mail.com', password: '123456',
+                          password_confirmation: '123456', confirmed_at: Date.today)
+
       5.times do |j|
-        post = Post.create(title:"Post ##{j+1}", text:"#{j+1}Lorem ipsum dolor set amet.", author:@tolib)
-        Comment.create(text:'Random comment', post:post, author: @tolib)
-        Comment.create(text:'Random comment', post:post, author: @adam)
+        post = Post.create(title: "Post ##{j + 1}", text: "#{j + 1}Lorem ipsum dolor set amet.", author: @tolib)
+        Comment.create(text: 'Random comment', post: post, author: @tolib)
+        Comment.create(text: 'Random comment', post: post, author: @adam)
       end
 
       fill_in 'Email', with: 'tolib@mail.com'
@@ -18,7 +20,6 @@ RSpec.describe 'Post', type: :system do
       click_link 'Tolib'
       click_link 'See all post'
       click_link 'Post #1'
-
     end
 
     it 'I can see the user\'s profile picture.' do
@@ -56,11 +57,10 @@ RSpec.describe 'Post', type: :system do
     it 'I can see a section for pagination if there are more posts than fit on the view.' do
       expect(page).to have_button('Pagination')
     end
-  
+
     it 'When I click on a post, it redirects me to that post\'s show page.' do
       click_link 'Post #1'
       expect(page).to have_current_path(user_post_path(@tolib.id, @tolib.posts.first.id))
     end
-
   end
 end
