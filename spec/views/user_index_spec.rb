@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Login page', type: :system do
   describe 'login page' do
-    before :each do
+    before do
       visit new_user_session_path
       User.create(name:'Tolib', email:"tolib@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
     end
