@@ -31,5 +31,26 @@ RSpec.describe 'Post', type: :system do
       expect(page).to have_content('by')
       expect(page).to have_content('Tolib')
     end
+
+    it 'I can see how many comments it has.' do
+      expect(page).to have_content('Comments: 2')
+    end
+
+    it 'I can see how many likes a post has.' do
+      expect(page).to have_content('Likes: 0')
+    end
+
+    it 'I can see the post body.' do
+      expect(page).to have_content('1Lorem ipsum dolor set amet.')
+    end
+
+    it 'I can see the username of each commentor.' do
+      expect(page).to have_content('Adam')
+      expect(page).to have_content('Tolib')
+    end
+    it 'I can see the comment each commentor left' do
+      expect(page).to have_content('Adam: Random comment')
+      expect(page).to have_content('Tolib: Random comment')
+    end
   end
 end
