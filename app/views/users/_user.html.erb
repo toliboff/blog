@@ -4,6 +4,6 @@
       <%= link_to user_path(user.id) do %>
         <span class="username"><%= user.name %></span>
       <% end %>
-      <div class="user-posts">Number of posts: <%= user.posts_counter ? user.posts_counter : 0 %></div>
+      <div class="user-posts">Number of posts: <span class="post-count"><%= user.posts_counter ? user.posts_counter : 0 %></span></div>
     </div>
 </article>

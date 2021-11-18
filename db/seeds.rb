@@ -8,7 +8,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 random = Random.new
-user_qty = random.rand(1..10)
+user_qty = random.rand(3..10)
 
 
 

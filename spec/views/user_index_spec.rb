@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Login page', type: :system do
-  describe 'index page' do
+  describe 'login page' do
     before :each do
       visit new_user_session_path
       User.create(name:'Tolib', email:"tolib@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
@@ -38,3 +38,37 @@ RSpec.describe 'Login page', type: :system do
 
   end
 end
+
+RSpec.describe 'User index page', type: :system do
+  describe 'user index page' do
+    before :each do
+      visit new_user_session_path
+      User.create(name:'Tolib', email:"tolib@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
+      fill_in 'Email', with: 'tolib@mail.com'
+      fill_in 'Password', with: '123456'
+      click_button 'Log in'
+    end
+
+    it 'I can see the username of all other users' do
+      expect(page).to have_selector('span.username')
+      expect(page).to have_selector('span.username', :between => 1..10)
+    end
+
+    it 'I can see the profile picture for each user' do
+      expect(page).to have_selector('img.users-image')
+      expect(page).to have_selector('img.users-image', :between => 1..10)
+    end
+
+    it 'I can see the number of posts each user has written' do
+      expect(page).to have_selector('span.post-count')
+      expect(page).to have_selector('span.post-count', :between => 0..5)
+    end
+
+    it 'When I click on a user, I am redirected to that user\'s show page' do
+      click_link 'Tolib'
+      expect(page).to have_current_path(page.find_link('Tolib')[:href])
+    end
+
+  end
+end
+
