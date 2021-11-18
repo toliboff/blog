@@ -30,6 +30,16 @@ RSpec.describe 'Post', type: :system do
       expect(page).to have_content('Tolib')
     end
 
-    
+    it 'I can see the number of posts the user has written.' do
+      expect(page).to have_content('Number of posts: 5')
+    end
+
+    it 'I can see the post\'s title' do
+      expect(page).to have_content('Post #1')
+    end
+
+    it 'I can see some of the post\'s body.' do
+      expect(page).to have_content('1Lorem ipsum dolor set amet.')
+    end
   end
 end
