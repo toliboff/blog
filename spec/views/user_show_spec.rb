@@ -3,11 +3,13 @@ RSpec.describe 'User show page', type: :system do
   describe 'user show page' do
     before do
       visit new_user_session_path
-      tolib = User.create(name:'Tolib', bio:'Tolib is a frontend developer', email:"tolib@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
-      User.create(name:'Adam', bio:'Adam is a backend developer', email:"adam@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
-      
+      tolib = User.create(name: 'Tolib', bio: 'Tolib is a frontend developer', email: 'tolib@mail.com',
+                          password: '123456', password_confirmation: '123456', confirmed_at: Date.today)
+      User.create(name: 'Adam', bio: 'Adam is a backend developer', email: 'adam@mail.com', password: '123456',
+                  password_confirmation: '123456', confirmed_at: Date.today)
+
       5.times do |j|
-        Post.create(title:"Post ##{j+1}", text:"#{j+1}Lorem ipsum dolor set amet.", author:tolib)
+        Post.create(title: "Post ##{j + 1}", text: "#{j + 1}Lorem ipsum dolor set amet.", author: tolib)
       end
       fill_in 'Email', with: 'tolib@mail.com'
       fill_in 'Password', with: '123456'
