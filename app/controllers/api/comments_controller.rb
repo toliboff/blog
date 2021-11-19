@@ -1,6 +1,6 @@
 # Controller for users
 class Api::CommentsController < ApplicationController
-  # before_action :authenticate_user!
+  skip_before_action :verify_authenticity_token
 
   def index
     @comments = Comment.where({post_id:params[:post_id]})
@@ -9,7 +9,8 @@ class Api::CommentsController < ApplicationController
 
   def create
     @comment = Comment.new comment_params
-    @comment.author = current_user
+    # change  User.first   with     current_user
+    @comment.author = User.first
     @comment.post_id = params[:post_id]
     if @comment.save
       render json: {status: 'SUCCESS', message: 'Comment saved', data: @comment }, status: :ok
