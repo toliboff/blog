@@ -1,5 +1,6 @@
 require 'rails_helper'
-RSpec.describe 'Post', type: :system do
+RSpec.describe 'showing the user\'s post process', type: :feature do
+
   describe 'index page' do
     before do
       visit new_user_session_path
@@ -17,9 +18,7 @@ RSpec.describe 'Post', type: :system do
       fill_in 'Email', with: 'tolib@mail.com'
       fill_in 'Password', with: '123456'
       click_button 'Log in'
-      click_link 'Tolib'
-      click_link 'See all post'
-      click_link 'Post #1'
+      visit "/users/#{@tolib.id}/posts/"
     end
 
     it 'I can see the user\'s profile picture.' do

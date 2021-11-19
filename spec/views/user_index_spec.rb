@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Login page', type: :system do
+RSpec.describe 'the signin process', type: :feature do
   describe 'login page' do
     before do
       visit new_user_session_path
@@ -38,7 +38,7 @@ RSpec.describe 'Login page', type: :system do
   end
 end
 
-RSpec.describe 'User index page', type: :system do
+RSpec.describe 'the main page', type: :feature do
   describe 'user index page' do
     before do
       visit new_user_session_path

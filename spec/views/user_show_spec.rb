@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'User show page', type: :system do
+RSpec.describe 'list of users with information about the posts they wrote', type: :feature do
   describe 'user show page' do
     before do
       visit new_user_session_path

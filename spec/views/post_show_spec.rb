@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'Post', type: :system do
+RSpec.describe 'showing the user\'s post process ->', type: :feature do
   describe 'show page' do
     before do
       visit new_user_session_path
