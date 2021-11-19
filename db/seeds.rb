@@ -8,12 +8,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 random = Random.new
-user_qty = random.rand(1..10)
+user_qty = random.rand(3..10)
 
 
 
 user_qty.times do |i|
-	user = User.create(name: "User#{i+1}", bio: "A bio of User#{i+1}.")
+	user = User.create(name: "User#{i+1}", bio: "A bio of User#{i+1}.", email:"user#{i+1}@mail.com", password:'123456', password_confirmation:'123456', confirmed_at:Date.today)
 	
 	post_qty = random.rand(1..5)
 	post_qty.times do |j|
