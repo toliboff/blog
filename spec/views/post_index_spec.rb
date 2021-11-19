@@ -1,7 +1,7 @@
 require 'rails_helper'
-RSpec.describe 'showing the user\'s post process', type: :feature do
+RSpec.describe 'showing the list of user\'s last published posts', type: :feature do
 
-  describe 'index page' do
+  describe 'index page:' do
     before do
       visit new_user_session_path
       @tolib = User.create(name: 'Tolib', bio: 'Tolib is a frontend developer', email: 'tolib@mail.com',

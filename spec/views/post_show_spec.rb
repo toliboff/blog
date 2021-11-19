@@ -1,6 +1,6 @@
 require 'rails_helper'
-RSpec.describe 'showing the user\'s post process ->', type: :feature do
-  describe 'show page' do
+RSpec.describe 'showing the user\'s post', type: :feature do
+  describe 'show page:' do
     before do
       visit new_user_session_path
       @tolib = User.create(name: 'Tolib', bio: 'Tolib is a frontend developer', email: 'tolib@mail.com',

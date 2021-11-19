@@ -38,8 +38,8 @@ RSpec.describe 'the signin process', type: :feature do
   end
 end
 
-RSpec.describe 'the main page', type: :feature do
-  describe 'user index page' do
+RSpec.describe 'list of users in', type: :feature do
+  describe 'user index page:' do
     before do
       visit new_user_session_path
       User.create(name: 'Tolib', email: 'tolib@mail.com', password: '123456', password_confirmation: '123456',
